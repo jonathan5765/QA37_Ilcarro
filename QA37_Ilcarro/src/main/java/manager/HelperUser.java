@@ -55,6 +55,15 @@ public class HelperUser extends HelperBase {
             //String text = element.getText();
             //return text;
         }
+    public String getMessageWrongRegistration () {
+        //wait
+        WebDriverWait wait = new WebDriverWait(wd, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOf(wd.findElement(By.cssSelector(".dialog-container"))));
+
+        //pause(8000);
+        return wd.findElement(By.cssSelector(".dialog-container")).getText();
+
+    }
         public boolean isLogged () {
             return isElementPresent(By.xpath("//a[text()=' Logout ']"));
         }
@@ -110,6 +119,7 @@ public class HelperUser extends HelperBase {
         int w = rect.getWidth();
 
         int xOffSet = -w/2;
+        //int xOffSet = -(label.getRect().getWidth()/2);
 
         Actions actions = new Actions(wd);
         actions.moveToElement(label,xOffSet,0).click().release().perform();

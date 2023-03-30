@@ -26,7 +26,12 @@ public class ApplicationManager {
     }
 
     public HelperUser getHelperUser() {
+
         return helperUser;
+    }
+
+    public HelperCar getHelperCar() {
+        return helperCar;
     }
 
     public void stop(){

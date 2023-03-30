@@ -22,8 +22,8 @@ public class AddNewCarTests extends TestBase {
                 .price(50)
                 .about("Very bice car")
                 .build();
-        app.getHelperUser().openCarForm();
-        app.getHelperUser().fillCarForm();
-        app.getHelperUser().submitCarForm();
+        app.getHelperCar().openCarForm();
+        app.getHelperCar().fillCarForm();
+        app.getHelperCar().submitCarForm();
     }
 }
