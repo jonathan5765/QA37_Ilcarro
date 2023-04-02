@@ -40,7 +40,7 @@ public class RegistrationTests extends TestBase {
     }
 
     @Test
-    public void registrationWrongFirstName() {
+    public void registrationEmptyName() {
 
         User user = new User().setFirstName(" ")
                 .setLastName("Snow")
@@ -60,7 +60,7 @@ public class RegistrationTests extends TestBase {
 
     }
     @Test
-    public void registrationWrongLastName() {
+    public void registrationEmptyLastName() {
 
         User user = new User().setFirstName("Lisa")
                 .setLastName(" ")
@@ -111,6 +111,26 @@ public class RegistrationTests extends TestBase {
         Assert.assertEquals(app.getHelperUser().getErrorText(), "Password must contain minimum 8 symbols\n" +
                 "Password must contain 1 uppercase letter, 1 lowercase letter, 1 number and one special symbol of [@$#^&*!]");
         Assert.assertTrue(app.getHelperUser().isYallaButtonNotActive());
+    }
+    @Test(enabled = false)
+    public void registrationUserExists() {
+
+        User user = new User().setFirstName("Lisa")
+                .setLastName("Snow")
+                .setEmail("snow@gmail.com")
+                .setPassword("Snow12345$");
+
+        app.getHelperUser().openRegistrationForm();
+        app.getHelperUser().fillRegistrationForm(user);
+        app.getHelperUser().checkPolicyXY();
+        app.getHelperUser().submit();
+
+        app.getHelperUser().pause(2000);
+
+        Assert.assertEquals(app.getHelperUser().getMessageWrongRegistration(),"Registration failed\n" +
+                "\"User already exists\"\n" +
+                "Ok");
+
     }
 
     @AfterMethod

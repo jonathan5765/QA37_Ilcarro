@@ -19,6 +19,8 @@ public class ApplicationManager {
         wd.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
         wd.navigate().to("https://ilcarro.web.app/");
+      //  wd.navigate().back(); --> back
+      //  wd.navigate().refresh(); --> refresh
         helperUser = new HelperUser(wd);
         helperCar = new HelperCar(wd);
 

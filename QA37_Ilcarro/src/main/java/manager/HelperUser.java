@@ -41,20 +41,8 @@ public class HelperUser extends HelperBase {
             type(By.xpath("//input[@id='password']"), user.getPassword());
 
         }
-        public void submit () {
-            click(By.xpath("//*[@type='submit']"));
-        }
-        public String getMessage () {
-            //wait
-            WebDriverWait wait = new WebDriverWait(wd, Duration.ofSeconds(5));
-            wait.until(ExpectedConditions.visibilityOf(wd.findElement(By.cssSelector(".dialog-container"))));
 
-            //pause(8000);
-            return wd.findElement(By.cssSelector(".dialog-container>h2")).getText();
-            //WebElement element = wd.findElement(By.cssSelector(".dialog-container>h2"));
-            //String text = element.getText();
-            //return text;
-        }
+
     public String getMessageWrongRegistration () {
         //wait
         WebDriverWait wait = new WebDriverWait(wd, Duration.ofSeconds(5));
@@ -109,20 +97,28 @@ public class HelperUser extends HelperBase {
         js.executeScript("document.querySelector('#terms-of-use').click();");
     }
     public void checkPolicyXY() {
-        Dimension size = wd.manage().window().getSize();
-        System.out.println("Wright screen -->");
+        if(!wd.findElement(By.id("terms-of-use")).isSelected()) {
+            Dimension size = wd.manage().window().getSize();
+            System.out.println("Wright screen -->");
 
-        WebElement label = wd.findElement(By.cssSelector("label[for='terms-of-use']"));
-        Dimension dimension = label.getSize();
+            WebElement label = wd.findElement(By.cssSelector("label[for='terms-of-use']"));
 
-        Rectangle rect = label.getRect();
-        int w = rect.getWidth();
+            Dimension dimension = label.getSize();
 
-        int xOffSet = -w/2;
-        //int xOffSet = -(label.getRect().getWidth()/2);
+            Rectangle rect = label.getRect();
+            int w = rect.getWidth();
 
-        Actions actions = new Actions(wd);
-        actions.moveToElement(label,xOffSet,0).click().release().perform();
+            int xOffSet = -w / 2;
+            //int xOffSet = -(label.getRect().getWidth()/2);
 
+            Actions actions = new Actions(wd);
+            actions.moveToElement(label, xOffSet, 0).click().release().perform();
+        }
+    }
+    public void login(User user){
+        openLoginForm();
+        fillLoginForm(user);
+        submit();
+        closeWindow();
     }
 }

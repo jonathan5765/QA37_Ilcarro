@@ -1,9 +1,13 @@
 package manager;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.List;
 
 public class HelperBase {
@@ -17,11 +21,16 @@ public class HelperBase {
         WebElement element = wd.findElement(locator);
         element.click();
         element.clear();
+        clearNew(element);
         if(text != null){
 
             element.sendKeys(text);
         }
 
+    }
+    public void clearNew(WebElement element){
+        element.sendKeys(" ");
+        element.sendKeys(Keys.BACK_SPACE);
     }
     public void click(By locator){
         WebElement element = wd.findElement(locator);
@@ -38,6 +47,20 @@ public class HelperBase {
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
+    public void submit () {
+        click(By.xpath("//*[@type='submit']"));
+    }
+    public String getMessage () {
+        //wait
+        WebDriverWait wait = new WebDriverWait(wd, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOf(wd.findElement(By.cssSelector(".dialog-container"))));
+
+        //pause(8000);
+        return wd.findElement(By.cssSelector(".dialog-container>h2")).getText();
+        //WebElement element = wd.findElement(By.cssSelector(".dialog-container>h2"));
+        //String text = element.getText();
+        //return text;
     }
 
 }
