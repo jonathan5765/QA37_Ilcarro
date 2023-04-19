@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="tests.SearchCarTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-04-19T13:02:54" hostname="LAPTOP-AKMCIEGD" time="15.625">
+  <properties/>
+  <testcase name="searchCurrentMonthSuccess" classname="tests.SearchCarTests" time="15.625"/>
+  <system-out><![CDATA[16:02:54.026  INFO  tests.TestBase - Name on method -->searchCurrentMonthSuccess
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

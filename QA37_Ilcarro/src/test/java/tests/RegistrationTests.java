@@ -30,7 +30,7 @@ public class RegistrationTests extends TestBase {
                 .setLastName("Snow")
                 .setEmail("snow" + i + "@gmail.com")
                 .setPassword("Snow12345$");
-
+        logger.info("Tests run with data --->" + user.toString());
         app.getHelperUser().openRegistrationForm();
         app.getHelperUser().fillRegistrationForm(user);
         app.getHelperUser().checkPolicyXY();
@@ -46,7 +46,7 @@ public class RegistrationTests extends TestBase {
                 .setLastName("Snow")
                 .setEmail("snow@gmail.com")
                 .setPassword("Snow12345$");
-
+        logger.info("Tests run with data --->" + user.toString());
         app.getHelperUser().openRegistrationForm();
         app.getHelperUser().fillRegistrationForm(user);
         app.getHelperUser().checkPolicyXY();

@@ -1,0 +1,13 @@
+10:13:24.366  INFO  manager.ApplicationManager - All tests run in Chrome Browser
+10:13:29.919  INFO  manager.ApplicationManager - The link --->https://ilcarro.web.app/search
+10:13:29.979  INFO  tests.TestBase - Name on method -->loginSuccess
+10:13:36.787  INFO  tests.TestBase - Name on method -->loginSuccess1
+10:13:36.890  INFO  tests.TestBase - Before method finish logout
+10:13:36.891  INFO  tests.TestBase - Start test with name 'loginSuccess1'
+10:13:36.892  INFO  tests.TestBase - Test data --> email:'tirex@gmail.com' & 'Rr12345$'
+10:13:37.695  INFO  tests.TestBase - Assert check is message 'Logged in success' present
+10:13:37.743  INFO  tests.TestBase - Name on method -->loginSuccessModel
+10:13:37.808  INFO  tests.TestBase - Before method finish logout
+10:13:38.659  INFO  tests.TestBase - Name on method -->loginWrongEmail
+10:13:38.726  INFO  tests.TestBase - Before method finish logout
+10:13:44.223  INFO  tests.TestBase - Name on method -->loginWrongPassword
