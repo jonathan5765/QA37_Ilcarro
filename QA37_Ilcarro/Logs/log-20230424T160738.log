@@ -1,0 +1,3 @@
+16:07:40.795  INFO  manager.ApplicationManager - All tests run in Chrome Browser
+16:07:44.673  INFO  manager.ApplicationManager - The link --->https://ilcarro.web.app/search
+16:07:44.762  INFO  tests.TestBase - Name on method -->searchCurrentYearSuccess

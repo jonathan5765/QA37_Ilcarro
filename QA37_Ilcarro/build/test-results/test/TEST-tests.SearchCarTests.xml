@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="tests.SearchCarTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-04-19T13:02:54" hostname="LAPTOP-AKMCIEGD" time="15.625">
+<testsuite name="tests.SearchCarTests" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-04-27T11:07:48" hostname="LAPTOP-AKMCIEGD" time="33.792">
   <properties/>
-  <testcase name="searchCurrentMonthSuccess" classname="tests.SearchCarTests" time="15.625"/>
-  <system-out><![CDATA[16:02:54.026  INFO  tests.TestBase - Name on method -->searchCurrentMonthSuccess
+  <testcase name="searchAnyPeriodSuccess" classname="tests.SearchCarTests" time="4.29"/>
+  <testcase name="searchCurrentMonthSuccess" classname="tests.SearchCarTests" time="3.62"/>
+  <testcase name="searchCurrentYearSuccess" classname="tests.SearchCarTests" time="25.334"/>
+  <system-out><![CDATA[14:07:47.811  INFO  tests.TestBase - Name on method -->searchAnyPeriodSuccess
+Windows 11
+14:07:52.496  INFO  tests.TestBase - Name on method -->searchCurrentMonthSuccess
+Windows 11
+14:07:56.380  INFO  tests.TestBase - Name on method -->searchCurrentYearSuccess
+Windows 11
+2023-04-27
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
