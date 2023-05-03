@@ -41,6 +41,12 @@ public class HelperBase {
         WebElement element = wd.findElement(locator);
         element.click();
     }
+    public boolean isYallaButtonNotActive () {
+        boolean res = isElementPresent(By.cssSelector("button[disabled]"));
+        WebElement element = wd.findElement(By.cssSelector("button[type='submit']"));
+        boolean result = element.isEnabled();
+        return res && !result;
+    }
     public boolean isElementPresent(By locator){
         List<WebElement> list = wd.findElements(locator);
         return list.size()>0;
